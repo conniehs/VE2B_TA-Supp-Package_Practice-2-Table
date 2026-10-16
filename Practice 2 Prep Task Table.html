@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Offers Evaluation Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col items-center justify-center p-6">
+
+    <main class="max-w-7xl w-full mx-auto space-y-6">
+        <div class="flex justify-end">
+            <button onclick="clearData()" class="bg-rose-600 hover:bg-rose-500 text-white text-base font-medium px-6 py-3 rounded-lg shadow transition">Reset Table</button>
+        </div>
+
+        <section class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="p-5 bg-slate-100 border-b border-slate-200 flex justify-between items-center">
+                <h3 class="text-xl font-bold text-slate-700">Possible Welcome Offers Evaluation Table</h3>
+                <span class="text-sm text-slate-500 font-medium">Click any cell to edit notes</span>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-indigo-50 border-b border-slate-200 text-indigo-900 text-base">
+                            <th class="p-5 w-32 text-center border-r border-slate-200 font-bold">👍/👎</th>
+                            <th class="p-5 border-r border-slate-200 font-semibold">Free suitcase</th>
+                            <th class="p-5 border-r border-slate-200 font-semibold">Supermarket cash coupon</th>
+                            <th class="p-5 border-r border-slate-200 font-semibold">HK$2,000 cash rebate</th>
+                            <th class="p-5 border-r border-slate-200 font-semibold">Free movie ticket</th>
+                            <th class="p-5 font-semibold">Others (Optional)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-base">
+                        <!-- Pros Row -->
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="p-5 text-center font-bold text-emerald-600 bg-emerald-50/50 border-r border-slate-200">
+                                <div class="flex flex-col items-center justify-center">
+                                    <svg class="w-8 h-8 mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg>
+                                    <span class="text-sm uppercase font-semibold">Pros (👍)</span>
+                                </div>
+                            </td>
+                            <td class="p-4 border-r border-slate-200 align-top bg-slate-50">
+                                <textarea id="suitcase_pro" readonly class="w-full h-44 p-3 border border-slate-200 bg-slate-100 text-slate-600 rounded-lg text-sm focus:outline-none resize-y cursor-not-allowed">• practical gift for clients who love travelling</textarea>
+                            </td>
+                            <td class="p-4 border-r border-slate-200 align-top">
+                                <textarea id="coupon_pro" class="w-full h-44 p-3 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none resize-y" placeholder="Enter pros..."></textarea>
+                            </td>
+                            <td class="p-4 border-r border-slate-200 align-top">
+                                <textarea id="rebate_pro" class="w-full h-44 p-3 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none resize-y" placeholder="Enter pros..."></textarea>
+                            </td>
+                            <td class="p-4 border-r border-slate-200 align-top">
+                                <textarea id="ticket_pro" class="w-full h-44 p-3 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none resize-y" placeholder="Enter pros..."></textarea>
+                            </td>
+                            <td class="p-4 align-top">
+                                <textarea id="others_pro" class="w-full h-44 p-3 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none resize-y" placeholder="Enter pros..."></textarea>
+                            </td>
+                        </tr>
+                        <!-- Cons Row -->
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="p-5 text-center font-bold text-rose-600 bg-rose-50/50 border-r border-slate-200">
+                                <div class="flex flex-col items-center justify-center">
+                                    <svg class="w-8 h-8 mb-2 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg>
+                                    <span class="text-sm uppercase font-semibold">Cons (👎)</span>
+                                </div>
+                            </td>
+                            <td class="p-4 border-r border-slate-200 align-top bg-slate-50">
+                                <textarea id="suitcase_con" readonly class="w-full h-44 p-3 border border-slate-200 bg-slate-100 text-slate-600 rounded-lg text-sm focus:outline-none resize-y cursor-not-allowed">• may have owned one already</textarea>
+                            </td>
+                            <td class="p-4 border-r border-slate-200 align-top">
+                                <textarea id="coupon_con" class="w-full h-44 p-3 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none resize-y" placeholder="Enter cons..."></textarea>
+                            </td>
+                            <td class="p-4 border-r border-slate-200 align-top">
+                                <textarea id="rebate_con" class="w-full h-44 p-3 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none resize-y" placeholder="Enter cons..."></textarea>
+                            </td>
+                            <td class="p-4 border-r border-slate-200 align-top">
+                                <textarea id="ticket_con" class="w-full h-44 p-3 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none resize-y" placeholder="Enter cons..."></textarea>
+                            </td>
+                            <td class="p-4 align-top">
+                                <textarea id="others_con" class="w-full h-44 p-3 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none resize-y" placeholder="Enter cons..."></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Only fields that are allowed to be modified/cleared
+        const fields = [
+            'coupon_pro', 'coupon_con',
+            'rebate_pro', 'rebate_con',
+            'ticket_pro', 'ticket_con',
+            'others_pro', 'others_con'
+        ];
+
+        window.onload = function() {
+            fields.forEach(id => {
+                const val = localStorage.getItem(id);
+                if (val !== null) {
+                    document.getElementById(id).value = val;
+                }
+            });
+        };
+
+        function clearData() {
+            if (confirm("Are you sure you want to clear all user-editable table entries?")) {
+                fields.forEach(id => {
+                    document.getElementById(id).value = "";
+                    localStorage.removeItem(id);
+                });
+                alertUser("Table has been reset.");
+            }
+        }
+
+        function alertUser(msg) {
+            const div = document.createElement('div');
+            div.className = "fixed bottom-5 right-5 bg-slate-900 text-white text-sm px-5 py-3 rounded-lg shadow-lg z-50 transition-all";
+            div.innerText = msg;
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 3000);
+        }
+    </script>
+</body>
+</html>
